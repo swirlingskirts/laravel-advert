@@ -16,11 +16,11 @@ class CreateAdvertsTable extends Migration
             $table->increments('id');
             $table->string('alt');
             $table->string('url');
-            $table->string('image_url');
-            $table->string('image_path');
-            $table->integer('views');
-            $table->integer('clicks');
-            $table->boolean('active');
+            $table->string('image_url')->nullable();
+            $table->string('image_path')->nullable();
+            $table->integer('views')->default(0);
+            $table->integer('clicks')->default(0);
+            $table->boolean('active')->default(0);
             $table->integer('advert_category_id')->unsigned();
             $table->timestamp('viewed_at');
             $table->timestamps();

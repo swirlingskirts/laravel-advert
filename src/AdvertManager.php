@@ -47,6 +47,7 @@ class AdvertManager {
         $advert = $advert_category
             ->adverts()
             ->where('active', true)
+            ->whereNotNull('image_path')
             ->where(function($query) use ($duplicate){
                 if(!$duplicate){
                     $query->whereNotIn('id', $this->used);
