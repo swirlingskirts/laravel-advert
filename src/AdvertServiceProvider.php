@@ -32,7 +32,8 @@ class AdvertServiceProvider extends ServiceProvider
         // Publish your migrations
         $this->publishes([
             __DIR__.'/../migrations/2016_03_11_202301_create_advert_categories_table.php' => database_path('migrations/2016_03_11_202301_create_advert_categories_table.php'),
-            __DIR__.'/../migrations/2016_03_11_202607_create_adverts_table.php' => database_path('migrations/2016_03_11_202607_create_adverts_table.php')
+            __DIR__.'/../migrations/2016_03_11_202607_create_adverts_table.php' => database_path('migrations/2016_03_11_202607_create_adverts_table.php'),
+            __DIR__.'/../migrations/2018_12_23_202301_add_timedependent_ads.php' => database_path('migrations/2018_12_23_202301_add_timedependent_ads.php')
         ], 'migrations');
 
         // Publishes view files

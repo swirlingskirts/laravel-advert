@@ -53,11 +53,11 @@ class AdvertManager {
                     $query->whereNotIn('id', $this->used);
                 }
             })->where(function ($query) {
-                  $query->where('start_run', '>=', \DB::raw('NOW()'))
+                  $query->where('start_run', '<=', \DB::raw('NOW()'))
                       ->orWhereNull('start_run');
               })
             ->where(function ($query) {
-                  $query->where('end_run', '<=', \DB::raw('NOW()'))
+                  $query->where('end_run', '>=', \DB::raw('NOW()'))
                       ->orWhereNull('end_run');
               })
             ->active()
