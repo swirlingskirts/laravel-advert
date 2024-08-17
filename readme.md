@@ -1,39 +1,21 @@
 # Laravel Advert
-Simple package that helps add advert to Laravel 5 websites. What is more it allows to see every advert clicks and views count for some statistics.
+Updated for Laravel 11, fork of Adumskis Laravel Advert for Laravel 5.
 
 ### Installation
-First require package with composer:
-```sh
-$ composer require adumskis/laravel-advert dev-master
-```
-Then add service provider to config/app.php:
-> Laravel 5.5 uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider
-```php
-'providers' => [
-    ...
-    Adumskis\LaravelAdvert\AdvertServiceProvider::class,
-],
-```
-Facade to aliases:
-```php
-'aliases' => [
-    ...
-    'AdvMng'    => Adumskis\LaravelAdvert\AdvertFacade::class,
-],
 ```
 Publish config:
 ```sh
-$ php artisan vendor:publish --provider="Adumskis\LaravelAdvert\AdvertServiceProvider" --tag=config
+$ php artisan vendor:publish --provider="SwirlingSkirts\LaravelAdvert\AdvertServiceProvider" --tag=config
 ```
 
 Publish Advert view:
 ```sh
-$ php artisan vendor:publish --provider="Adumskis\LaravelAdvert\AdvertServiceProvider" --tag=views
+$ php artisan vendor:publish --provider="SwirlingSkirts\LaravelAdvert\AdvertServiceProvider" --tag=views
 ```
 
 Lastly publish the migrations if you want to edit them and migrate
 ```sh
-$ php artisan vendor:publish --provider="Adumskis\LaravelAdvert\AdvertServiceProvider" --tag=migrations
+$ php artisan vendor:publish --provider="SwirlingSkirts\LaravelAdvert\AdvertServiceProvider" --tag=migrations
 $ php artisan migrate
 ```
 

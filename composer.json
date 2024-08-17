@@ -1,27 +1,30 @@
 {
-    "name": "adumskis/laravel-advert",
+    "name": "swirlingskirts/laravel-advert",
     "description": "Advertising helper for laravel",
     "authors": [
         {
             "name": "Algirdas",
             "email": "algirdasdum@gmail.com"
-        }
+        },
+        {"name": "Kim",
+        "email": "kim@pixelovely.com"
+      }
     ],
     "require": {
       "intervention/image": "^2.3"
     },
     "autoload": {
       "psr-4": {
-        "Adumskis\\LaravelAdvert\\": "src"
+        "SwirlingSkirts\\LaravelAdvert\\": "src"
       }
     },
     "extra": {
       "laravel": {
         "providers": [
-          "Adumskis\\LaravelAdvert\\AdvertServiceProvider"
+          "SwirlingSkirts\\LaravelAdvert\\AdvertServiceProvider"
         ],
         "aliases": {
-          "AdvMng": "Adumskis\\LaravelAdvert\\AdvertFacade"
+          "AdvMng": "SwirlingSkirts\\LaravelAdvert\\AdvertFacade"
         }
       }
     }
