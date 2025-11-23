@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Adumskis\LaravelAdvert\Model\AdvertCategory;
+use Illuminate\Support\Str;
 
 class Advert extends Model
 {
@@ -126,7 +127,7 @@ class Advert extends Model
      * @return string
      */
     public static function generateImageName($extension = 'png'){
-        return Carbon::now()->timestamp.'_'.str_random(8).'.'.$extension;
+        return Carbon::now()->timestamp.'_'.Str::random(8).'.'.$extension;
     }
 
 
@@ -170,7 +171,7 @@ class Advert extends Model
     private function deleteImage(){
         $storage = Storage::disk(config('laravel-advert.default_file_system'));
 
-        if($storage->exists($this->image_path) && $this->image_path !== null){
+        if($this->image_path !== null && $storage->exists($this->image_path)){
             $storage->delete($this->image_path);
         }
     }
