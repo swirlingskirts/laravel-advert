@@ -122,6 +122,10 @@ class Advert extends Model
         return $this->save();
     }
 
+    public function wasViewed() {
+        return $this->update(['views' => $this->views+1, 'viewed_at' => Carbon::now()]);
+    }
+
     /**
      * @param string $extension
      * @return string
